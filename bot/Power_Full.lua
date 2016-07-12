@@ -228,391 +228,122 @@ function create_config( )
     "invite",
     "all",
     "leave_ban",
-	"supergroup",
-	"whitelist",
-	"msg_checks"
+    "supergroup",
+    "whitelist",
+    "msg_checks"
     },
-    sudo_users = {110626080,103649648,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {181102312,223870582,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v4
-An advanced administration bot based on TG-CLI written in Lua
-
-https://github.com/SEEDTEAM/TeleSeed
-
-Admins
-@iwals [Founder]
-@imandaneshi [Developer]
-@POTUS [Developer]
-@seyedan25 [Manager]
-@aRandomStranger [Admin]
-
-Special thanks to
-awkward_potato
-Siyanew
-topkecleon
-Vamptacus
-
-Our channels
-@teleseedch [English]
-@iranseed [persian]
-
-Our website 
-http://teleseed.seedteam.org/
-]],
+    about_text = [[TelePowerFull
+    developer
+    amir alone [@antisudo]
+    sasna alone [@xxxx_alone_boy_xxxx] ]],
     help_text_realm = [[
-Realm Commands:
-
-!creategroup [Name]
-Create a group
-
-!createrealm [Name]
-Create a realm
-
-!setname [Name]
-Set realm name
-
-!setabout [group|sgroup] [GroupID] [Text]
-Set a group's about text
-
-!setrules [GroupID] [Text]
-Set a group's rules
-
-!lock [GroupID] [setting]
-Lock a group's setting
-
-!unlock [GroupID] [setting]
-Unock a group's setting
-
-!settings [group|sgroup] [GroupID]
-Set settings for GroupID
-
+راهنمای ریلم :
+!creategroup [نام مورد نظر برای ساخت گروه]
+ساخت گروه
+!createrealm [نام مورد نظر برای ساخت ریلم]
+ساخت ریلم
+!setname [نام مورد نظر]
+تغییر نام
+!setabout [ایدی گروه] [متن]
+تنظیم اطلاعات گروه
+!setrules [ایدی گروه] [متن]
+تنظیم قوانین گروه
+!lock [ایدی گروه] [تنظیمات]
+قفل تنظیمات گروه
+!unlock [ایدی گروه] [تنظیمات]
+باز کردن تنظیمات گروه
 !wholist
-Get a list of members in group/realm
-
+دریافت اطلاعات کاربران گروه یا ریلم
 !who
-Get a file of members in group/realm
-
+دریافت فایل اطلاعات کابران گروه یا ریلم
 !type
-Get group type
-
-!kill chat [GroupID]
-Kick all memebers and delete group
-
-!kill realm [RealmID]
-Kick all members and delete realm
-
-!addadmin [id|username]
-Promote an admin by id OR username *Sudo only
-
-!removeadmin [id|username]
-Demote an admin by id OR username *Sudo only
-
+دریافت نوشته شه های گروه
+!kill chat [ایدی گروه]
+پاک کردن گروه و تمامی کاربران
+!kill realm [ایدی ریلم]
+پاک کردن ریلم و تمامی کاربران
+!addadmin [ایدی یوزر نیم]
+ ادمین شدند فرد*Sudo only
+!removeadmin [ایدی یوزر نیم]
+از ادمینی بر کنار شدن فرد *Sudo only
 !list groups
-Get a list of all groups
-
+دریافت لیست گروه های ربات
 !list realms
-Get a list of all realms
-
-!support
-Promote user to support
-
-!-support
-Demote user from support
-
+دریافت لیست ریلم های ربات
 !log
-Get a logfile of current group or realm
-
-!broadcast [text]
-!broadcast Hello !
-Send text to all groups
-Only sudo users can run this command
-
-!bc [group_id] [text]
-!bc 123456789 Hello !
-This command will send text to [group_id]
-
-
-**You can use "#", "!", or "/" to begin all commands
-
-
-*Only admins and sudo can add bots in group
-
-
-*Only admins and sudo can use kick,ban,unban,newlink,setphoto,setname,lock,unlock,set rules,set about and settings commands
-
-*Only admins and sudo can use res, setowner, commands
+دریافت گزارش گروه
+!broadcast [متن مورد نظر]
+فرستادن متن در تمامی گروه ها
+!bc [ایدی گروه] [متن مورد نظر]
+فرستادن متن در گروه مورد نظر
 ]],
     help_text = [[
-Commands list :
-
-!kick [username|id]
-You can also do it by reply
-
-!ban [ username|id]
-You can also do it by reply
-
-!unban [id]
-You can also do it by reply
-
+راهنمای گروه :
+!kick [ایدی یوزرنیم]
+شما میتوانید انرا با ریپلی هم اخراج کنید
+!ban [ایدی یوزرنیم]
+شما میتوانید انرا با ریپلی هم  از گروه بن کنید
+!unban [ایدی]
+شما میتوانید انرا با ریپلی هم  از گروه حذف بن کنید
 !who
-Members list
-
+لیست کاربران
 !modlist
-Moderators list
-
-!promote [username]
-Promote someone
-
-!demote [username]
-Demote someone
-
+لیست مدیران
+!promote [یوزر نیم]
+مدیر شدن کسی
+!demote [یوزرنیم]
+خلع کردن مدیر
 !kickme
-Will kick user
-
+اخراج خود
 !about
-Group description
-
+اطلاعات گروه
 !setphoto
-Set and locks group photo
-
-!setname [name]
-Set group name
-
+فرستادن عکس جدید برای گروه
+!setname [نام مورد نظر]
+تنظیم نام گروه
 !rules
-Group rules
-
+قوانین گروه
 !id
-return group id or user id
-
+فرستادن ایدی گروه و یا ایدی کاربر
 !help
-Returns help text
-
-!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
-Lock group settings
-*rtl: Kick user if Right To Left Char. is in name*
-
-!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
-Unlock group settings
-*rtl: Kick user if Right To Left Char. is in name*
-
-!mute [all|audio|gifs|photo|video]
-mute group message types
-*If "muted" message type: user is kicked if message type is posted 
-
-!unmute [all|audio|gifs|photo|video]
-Unmute group message types
-*If "unmuted" message type: user is not kicked if message type is posted 
-
-!set rules <text>
-Set <text> as rules
-
-!set about <text>
-Set <text> as about
-
+دریافت راهنمای ربات
+!lock [خروج ربات ها نام گروه کاربران] 
+قفل شدن خروج ربات ها نام گروه کاربران 
+!unlock  [خروج ربات ها نام گروه کاربران] 
+بازشدن شدن خروج ربات ها نام گروه کاربران 
+!set rules [متن]
+تنظیم قوانین گروه
+!set about [متن]
+تنظیم اطلاعات گروه
 !settings
-Returns group settings
-
-!muteslist
-Returns mutes for chat
-
-!muteuser [username]
-Mute a user in chat
-*user is kicked if they talk
-*only owners can mute | mods and owners can unmute
-
-!mutelist
-Returns list of muted users in chat
-
+دریافت تنظیمات گروه
 !newlink
-create/revoke your group link
-
+ساخت لینک جدید گروه
 !link
-returns group link
-
+دریافت لینک گروه
 !owner
-returns group owner id
-
-!setowner [id]
-Will set id as owner
-
-!setflood [value]
-Set [value] as flood sensitivity
-
+دریافت ایدی مالک گروه
+!setowner [ایدی]
+تنظیم کردن فردی برای مالک گروه
+!setflood [عدد مورد نظر]
+تنظیم شدن اسپمینگ گروه
 !stats
-Simple message statistics
-
-!save [value] <text>
-Save <text> as [value]
-
-!get [value]
-Returns text of [value]
-
-!clean [modlist|rules|about]
-Will clear [modlist|rules|about] and set it to nil
-
-!res [username]
-returns user id
-"!res @username"
-
+دریفات متنی امار گروه
+!save [value] [متن]
+ذخیره شدن متن
+!get [متن]
+دریافت متن
+!clean [مدیران اطلاعات گروه قوانین]
+پاک شدن تمامی مدیران اطلاعات گروه قوانین گروه
+!res [یوزرنیم]
+دریافت اطلاعات با یوزر نیم
 !log
-Returns group logs
-
+دریافت گزارش گروه
 !banlist
-will return group ban list
-
-**You can use "#", "!", or "/" to begin all commands
-
-
-*Only owner and mods can add bots in group
-
-
-*Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
-
-*Only owner can use res,setowner,promote,demote and log commands
-
-]],
-	help_text_super =[[
-SuperGroup Commands:
-
-!info
-Displays general info about the SuperGroup
-
-!admins
-Returns SuperGroup admins list
-
-!owner
-Returns group owner
-
-!modlist
-Returns Moderators list
-
-!bots
-Lists bots in SuperGroup
-
-!who
-Lists all users in SuperGroup
-
-!block
-Kicks a user from SuperGroup
-*Adds user to blocked list*
-
-!ban
-Bans user from the SuperGroup
-
-!unban
-Unbans user from the SuperGroup
-
-!id
-Return SuperGroup ID or user id
-*For userID's: !id @username or reply !id*
-
-!id from
-Get ID of user message is forwarded from
-
-!kickme
-Kicks user from SuperGroup
-*Must be unblocked by owner or use join by pm to return*
-
-!setowner
-Sets the SuperGroup owner
-
-!promote [username|id]
-Promote a SuperGroup moderator
-
-!demote [username|id]
-Demote a SuperGroup moderator
-
-!setname
-Sets the chat name
-
-!setphoto
-Sets the chat photo
-
-!setrules
-Sets the chat rules
-
-!setabout
-Sets the about section in chat info(members list)
-
-!save [value] <text>
-Sets extra info for chat
-
-!get [value]
-Retrieves extra info for chat by value
-
-!newlink
-Generates a new group link
-
-!link
-Retireives the group link
-
-!rules
-Retrieves the chat rules
-
-!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
-Lock group settings
-*rtl: Delete msg if Right To Left Char. is in name*
-*strict: enable strict settings enforcement (violating user will be kicked)*
-
-!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
-Unlock group settings
-*rtl: Delete msg if Right To Left Char. is in name*
-*strict: disable strict settings enforcement (violating user will not be kicked)*
-
-!mute [all|audio|gifs|photo|video|service]
-mute group message types
-*A "muted" message type is auto-deleted if posted
-
-!unmute [all|audio|gifs|photo|video|service]
-Unmute group message types
-*A "unmuted" message type is not auto-deleted if posted
-
-!setflood [value]
-Set [value] as flood sensitivity
-
-!settings
-Returns chat settings
-
-!muteslist
-Returns mutes for chat
-
-!muteuser [username]
-Mute a user in chat
-*If a muted user posts a message, the message is deleted automaically
-*only owners can mute | mods and owners can unmute
-
-!mutelist
-Returns list of muted users in chat
-
-!banlist
-Returns SuperGroup ban list
-
-!clean [rules|about|modlist|mutelist]
-
-!del
-Deletes a message by reply
-
-!public [yes|no]
-Set chat visibility in pm !chats or !chatlist commands
-
-!res [username]
-Returns users name and id by username
-
-
-!log
-Returns group logs
-*Search for kick reasons using [#RTL|#spam|#lockmember]
-
-**You can use "#", "!", or "/" to begin all commands
-
-*Only owner can add members to SuperGroup
-(use invite link to invite)
-
-*Only moderators and owner can use block, ban, unban, newlink, link, setphoto, setname, lock, unlock, setrules, setabout and settings commands
-
-*Only owner can use res, setowner, promote, demote, and log commands
-
-]],
+لیست کسانی که بن شده اند
+]]
   }
   serialize_to_file(config, './data/config.lua')
   print('saved config into ./data/config.lua')

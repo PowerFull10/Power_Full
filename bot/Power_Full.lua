@@ -237,7 +237,7 @@ function create_config( )
     about_text = [[TelePowerFull
     developer
     amir alone [@antisudo]
-    sasna alone [@xxxx_alone_boy_xxxx] ]],
+    ALONE BOY [@xxxx_alone_boy_xxxx] ]],
     help_text_realm = [[
 راهنمای ریلم :
 !creategroup [نام مورد نظر برای ساخت گروه]

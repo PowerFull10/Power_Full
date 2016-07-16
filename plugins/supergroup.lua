@@ -1,6 +1,6 @@
 --Begin supergrpup.lua
---By @Taylor_Team
---Link https://telegram.me/plugin_ch/107
+--By 
+--Link 
 --Check members #Add supergroup
 local function check_member_super(cb_extra, success, result)
   local receiver = cb_extra.receiver
@@ -2136,6 +2136,6 @@ return {
   pre_process = pre_process
 }
 --End supergrpup.lua
---Thx fi @Taylor_Team
---By @plugin_ch
---Link https://telegram.me/plugin_ch/107
+--Thx fi 
+--By 
+--Link 
